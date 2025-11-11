@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Services - Shivox</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+      color: #001f3f;
+    }
+
+    h1, h2, p, a {
+      color: #001f3f;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+
+.quote-section {
+  background-color: #e2e8f0;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+}
+
+.quote-section p {
+  font-size: 18px;
+  color: #001f3f;
+  margin-bottom: 20px;
+}
+
+.quote-section strong {
+  font-weight: 600;
+}
+
+.redirect-button {
+  background-color: #001f3f; /* navy blue background */
+  color: #ffffff;           /* white text */
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.redirect-button:hover {
+  background-color: #003366; /* darker navy on hover */
+  transform: scale(1.05);
+}
+
+    .back-button {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      padding: 10px 20px;
+      background-color: #001f3f;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 0.95em;
+      transition: background-color 0.2s ease;
+    }
+
+    .back-button:hover {
+      background-color: #003366;
+    }
+
+    .services-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .service-card {
+      width: 220px;
+      background-color: white;
+      border: 2px solid #001f3f;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      padding: 15px;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .service-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .service-card p {
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+      background-color: #f1f1f1;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.5);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border: 2px solid #001f3f;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+      position: relative;
+    }
+
+    .modal-content img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="Shivox.html" class="back-button">← Back</a>
+    <h1>Our Services</h1>
+  </header>
+
+  <div class="services-container">
+    <div class="service-card" onclick="openModal('modal1')">
+      <img src="Service5.jpeg" alt="Installation">
+      <p>Installation</p>
+    </div>
+    
+    <div class="service-card" onclick="openModal('modal3')">
+      <img src="Service3.jpeg" alt="Commissioning">
+      <p>Commissioning</p>
+    </div>
+    <div class="service-card" onclick="openModal('modal4')">
+      <img src="Service4.jpeg" alt="Maintenance">
+      <p>Maintenance</p>
+    </div>
+<div class="service-card" onclick="openModal('modal2')">
+      <img src="Service2.jpeg" alt="Grid Systems">
+      <p>Grid Systems</p>
+    </div>
+    <div class="service-card" onclick="openModal('modal5')">
+      <img src="Service1.jpeg" alt="Software Development">
+      <p>Software Development</p>
+    </div>
+  </div>
+
+  <!-- Modal 1: Installation -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <img src="Service5.jpeg" alt="Installation">
+      <h2>Installation</h2>
+      <p>
+        We specialize in the professional installation of solar power systems tailored to your energy needs.
+        Our experienced team manages every step — from site survey and system design to mounting, wiring, and final setup.
+      </p>
+      <p>
+        We install on-grid, off-grid, and hybrid solar systems using top-quality panels and inverters to ensure maximum efficiency and safety.
+        With a focus on durability and performance, we deliver solar installations built to last and save you money for years to come.
+      </p>
+      <p>
+        <strong>Switch to clean, renewable energy today</strong> — we handle the installation from start to finish!
+      </p>
+    </div>
+  </div>
+
+
+<!-- Modal 3: Commissioning -->
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal3')">&times;</span>
+    <img src="Service3.jpeg" alt="Commissioning">
+    <h2>Solar System Commissioning</h2>
+    <p><strong>Seamless Solar System Commissioning for Optimal Performance.</strong></p>
+    <p>
+      Want to make sure your solar setup works perfectly? At <b><em>Shivox</em></b>, we offer hassle-free solar commissioning services to get your system running safely and efficiently.
+    </p>
+    <p>
+      Our team performs thorough checks, testing, and fine-tuning to ensure your system complies with regulations and delivers peak power output.
+      Whether it's a home rooftop or an industrial solar plant, we handle everything — so you can enjoy clean energy without worries.
+    </p>
+    <p>
+      <strong>Let’s get your solar system powered up and ready — contact us today for smooth commissioning.</strong>
+    </p>
+  </div>
+</div>
+
+
+<!-- Modal 4: Maintenance -->
+<div id="modal4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal4')">&times;</span>
+    <img src="Service4.jpeg" alt="Solar Maintenance">
+    <h2>Solar Maintenance & AMC</h2>
+    <p><strong>Reliable Solar Maintenance & AMC Services to Maximize System Life.</strong></p>
+    <p>
+      Ensure your solar investment performs at its best with our expert maintenance services.
+      At <b><em>Shivox</em></b>, we offer regular inspections, cleaning, performance monitoring, and preventive repairs for solar power systems of all sizes.
+    </p>
+    <p>
+      Our maintenance and AMC (Annual Maintenance Contracts) help detect issues early, improve efficiency, and extend the lifespan of your solar setup.
+      Backed by technical expertise, we keep your system generating maximum power year after year.
+    </p>
+    <p>
+      <strong>Choose us for professional, reliable, and comprehensive solar maintenance solutions.</strong>
+    </p>
+  </div>
+</div>
+
+<!-- Modal 2: On-Grid Solar Systems -->
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+    <img src="Service2.jpeg" alt="On-Grid Solar System">
+    <h2>On-Grid Solar Systems</h2>
+    <p>
+      We specialize in On-Grid Solar System solutions designed to power homes, businesses, and industries while significantly reducing electricity costs.
+      An on-grid solar system is connected directly to the utility grid, allowing you to use solar energy during the day and export excess power back to the grid for credit through net metering.
+    </p>
+    <p>
+      Our expert team handles the complete process — from system design and installation to commissioning and government approvals — ensuring a smooth and efficient transition to solar energy.
+    </p>
+    <h3>Key Features of On-Grid Solar Systems:</h3>
+    <ul style="text-align:left; line-height: 1.6;">
+      <li>✅ Connected to Utility Grid for seamless energy flow</li>
+      <li>✅ Net Metering available to earn credits on surplus power</li>
+      <li>✅ No Battery Required, making it cost-effective and low maintenance</li>
+      <li>✅ High-Efficiency Solar Panels & Quality Grid-Tie Inverters</li>
+      <li>✅ Custom Sizes for residential, commercial, and industrial use</li>
+      <li>✅ Government Subsidy & Tax Benefits available (as per policy)</li>
+    </ul>
+    <h3>Our Services Include:</h3>
+    <ul style="text-align:left; line-height: 1.6;">
+      <li>✅ Site survey & energy assessment</li>
+      <li>✅ System design with accurate load calculations</li>
+      <li>✅ Installation using premium panels and inverters</li>
+      <li>✅ Grid connection & net metering approval</li>
+      <li>✅ Testing, commissioning & after-sales support</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Modal 5: Solar & Electrical Design -->
+<div id="modal5" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal5')">&times;</span>
+    <img src="Service1.jpeg" alt="Solar & Electrical Design">
+    <h2>Solar & Electrical System Design</h2>
+    <p><strong>Professional Design for Solar Panels, Electrical Systems & Power Solutions</strong></p>
+    <p>
+      At <strong>Shivox</strong>, we provide expert design services for solar energy systems and electrical installations tailored to meet your project’s unique needs.
+      Using advanced tools like AutoCAD and electrical design software, our team creates precise layouts, schematics, and wiring diagrams that ensure efficient, safe, and code-compliant installations.
+    </p>
+    <p>
+      Whether you’re planning a rooftop solar system, an industrial power setup, or a complete electrical network,
+      we deliver detailed designs that optimize performance, reduce costs, and streamline the installation process.
+    </p>
+  </div>
+</div>
+
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'block';
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll('.modal');
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    };
+  </script>
+
+
+
+
+
+
+
+<div class="quote-section">
+  <p>
+ Click the button to get redirected to GET QUOTE to
+    <strong>Place Order, Ask Query, or Negotiate</strong>
+  </p>
+  <button class="redirect-button" onclick="window.location.href='https://forms.gle/UeQspQ6SM4dRk7W99'">
+    Get Quote Form
+  </button>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

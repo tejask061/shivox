@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Catalog</title>
+  <style>
+.quote-section {
+  background-color: #e2e8f0;
+  padding: 30px;
+  margin: 40px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+}
+
+.quote-section p {
+  font-size: 18px;
+  color: #001f3f;
+  margin-bottom: 20px;
+}
+
+.quote-section strong {
+  font-weight: 600;
+}
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      text-decoration: none;
+      background-color: #001f3f;
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background-color 0.2s ease;
+    }
+
+    .back-button:hover {
+      background-color: #004080;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .product {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .product-name {
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #001f3f;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 700px;
+      width: 90%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    .modal-content h2 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .modal-content h3 {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #001f3f;
+    }
+
+    .modal-content p, .modal-content ul {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 10px;
+    }
+
+    .modal-content ul {
+      padding-left: 20px;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+      color: #888;
+      cursor: pointer;
+    }
+
+    .close-btn:hover {
+      color: #000;
+    }
+
+    .view-full-btn {
+      background-color: #001f3f;
+      color: white;
+      padding: 10px 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      align-self: start;
+      transition: background-color 0.2s ease;
+    }
+
+    .view-full-btn:hover {
+      background-color: #004080;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+.redirect-button {
+  background-color: #001f3f; 
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.redirect-button:hover {
+  background-color: #3b527a;
+}
+
+  </style>
+</head>
+<body>
+
+<a href="Shivox.html" class="back-button">← Back</a>
+
+<h1>Our Products</h1>
+
+<div class="gallery">
+
+  
+<div class="product" onclick="showModal(
+  'Product1.jpeg',
+  'Premium Solar Panels for Efficient & Sustainable Energy',
+  `<p>Harness the power of the sun with our high-performance solar panels, designed for maximum efficiency and durability. Built with advanced photovoltaic technology, our panels deliver consistent energy output, helping you reduce electricity bills while minimizing your carbon footprint. Ideal for homes, businesses, and large-scale installations, each panel is crafted to withstand harsh weather conditions and ensure long-lasting performance.</p>
+
+  <p>Make the switch to clean, renewable energy today and invest in a brighter, greener future.</p>
+
+  <h4>Key Benefits:</h4>
+  <ul>
+    <li>High efficiency for greater power output</li>
+    <li>Durable and weather-resistant design</li>
+    <li>Eco-friendly and cost-effective solution</li>
+    <li>Easy installation and low maintenance</li>
+  </ul>`
+)">
+  <img src="Product1.jpeg" alt="Solar Panel">
+  <div class="product-name">Solar Panel</div>
+</div>
+
+ <div class="product" onclick="showModal(
+    'Product2.jpeg', 
+    'Solar Inverters: On-Grid, Off-Grid & Hybrid', 
+ `<h3>1. On-Grid (Grid-Tied) Solar Inverters</h3>
+     <p><strong>Efficient Power Conversion with Seamless Grid Integration</strong></p>
+     <p>Our On-Grid Solar Inverters are designed for maximum efficiency and smooth synchronization with the utility grid. Ideal for homes and businesses connected to the power grid, these inverters convert solar energy into usable electricity while allowing you to export excess power back to the grid for credits (net metering).</p>
+     <ul>
+       <li>Best for grid-connected systems</li>
+       <li>Supports net metering for energy savings</li>
+       <li>High efficiency with MPPT technology</li>
+       <li>Compact, durable, and low maintenance</li>
+     </ul>
+     <h3>2. Off-Grid Solar Inverters</h3>
+     <p><strong>Reliable Power Anytime, Anywhere — No Grid Required</strong></p>
+     <p>Our Off-Grid Solar Inverters provide independent power solutions where grid access is unavailable or unreliable. Perfect for remote locations, farms, cabins, and rural homes, these inverters store excess energy in batteries for use anytime, day or night.</p>
+     <ul>
+       <li>Ideal for remote and rural areas</li>
+       <li>Supports battery storage for 24/7 power</li>
+       <li>Robust design for tough conditions</li>
+       <li>Ensures energy independence</li>
+     </ul>
+     <h3>3. Hybrid Solar Inverters</h3>
+     <p><strong>Smart Energy Management – Combine Solar, Battery & Grid</strong></p>
+     <p>Our Hybrid Solar Inverters offer the best of both worlds, combining the features of on-grid and off-grid systems. Seamlessly manage energy from solar panels, battery storage, and the grid for maximum flexibility and efficiency.</p>
+     <ul>
+       <li>Manages solar, battery, and grid power</li>
+       <li>Supports backup power during blackouts</li>
+       <li>High efficiency with intelligent energy management</li>
+       <li>Future-proof and scalable solution</li>
+     </ul>`
+  )">
+    <img src="Product2.jpeg" alt="Product 2">
+    <div class="product-name">Solar Inverter</div>
+  </div>
+
+  <!-- ✅ Add more products below this line -->
+  <div class="product" onclick="showModal(
+    'Product3.jpeg',
+    'Solar BLDC Table Fan with Complete Solar Setup',
+    `<p><strong>Energy-Efficient Cooling Powered by the Sun</strong></p>
+    <p>Stay cool while saving energy with our Solar BLDC Table Fan, designed to run directly on solar power with maximum efficiency. Equipped with advanced BLDC (Brushless DC) motor technology, this fan consumes up to 60% less power compared to regular fans while delivering powerful airflow. The complete setup includes a compatible solar panel and charge controller.</p>
+    <ul>
+      <li>Energy-saving BLDC motor for low power consumption</li>
+      <li>Runs directly on solar power or battery backup</li>
+      <li>Includes solar panel & charge controller</li>
+    </ul>`
+  )">
+    <img src="Product3.jpeg" alt="Product 3">
+    <div class="product-name">Solar Fan</div>
+  </div>
+
+
+<div class="product" onclick="showModal(
+  'Product5.jpeg',
+  'Solar CCTV Camera with Complete Solar Setup',
+  `<p><strong>24/7 Security Powered by the Sun</strong></p>
+   <p>Protect your property with our Solar CCTV Camera, designed for continuous security monitoring without the need for electricity or complicated wiring. Powered entirely by a high-efficiency solar panel and equipped with a rechargeable battery backup, this camera operates day and night, even during power outages or in remote locations.</p>
+   <p>With features like HD video quality, night vision, motion detection alerts, and wireless connectivity, it’s perfect for homes, farms, offices, warehouses, and construction sites. Easy to install and eco-friendly, this is the ideal solution for reliable, off-grid security.</p>
+   <ul>
+     <li>Runs 100% on solar power with battery backup</li>
+     <li>HD video quality with clear night vision</li>
+     <li>Motion detection & real-time alerts</li>
+     <li>Wireless connectivity & easy setup</li>
+     <li>Perfect for remote and off-grid locations</li>
+   </ul>`
+)">
+  <img src="Product5.jpeg" alt="Solar CCTV Camera">
+  <div class="product-name">Solar CCTV</div>
+</div>
+
+<div class="product" onclick="showModal(
+    'Product4.jpeg',
+    'Solar Street Light — Smart, Sustainable Outdoor Lighting',
+    `<p><strong>Brighten Your Streets & Save Energy with Solar Power</strong></p>
+    <p>Illuminate roads, pathways, parks, and open spaces with our high-efficiency Solar Street Lights — designed for maximum brightness and zero electricity costs.</p>
+    <ul>
+      <li>100% solar powered — no grid connection needed</li>
+      <li>Bright LED lights with high lumens output</li>
+      <li>Built-in battery for long backup</li>
+      <li>Automatic on/off with dusk-to-dawn sensor</li>
+      <li>Weatherproof & durable (IP65 rated)</li>
+      <li>Optional motion sensor for energy saving</li>
+    </ul>`
+  )">
+    <img src="Product4.jpeg" alt="Product 4">
+    <div class="product-name">Solar Street Light</div>
+  </div>
+
+
+<div class="product" onclick="showModal(
+  'Product6.jpeg',
+  'Solar Water Pump — Efficient, Eco-Friendly Water Solution',
+  `<p><strong>Pump Water Anywhere Using the Power of the Sun</strong></p>
+   <p>Our Solar Water Pumps offer a reliable and cost-effective solution for irrigation, farming, livestock, and household water needs — all without electricity or fuel. Powered entirely by solar energy, these pumps are ideal for remote locations, farms, gardens, and areas with unreliable grid access. With high-efficiency motors and durable solar panels, they deliver consistent water flow while reducing operating costs and carbon emissions.</p>
+   <p>Available in submersible and surface pump options, our solar water pumps are built to handle various water lifting and irrigation tasks with ease.</p>
+   <h3>Features:</h3>
+   <ul>
+     <li>100% solar powered — no fuel or electricity needed</li>
+     <li>High-efficiency motor for maximum water output</li>
+     <li>Available in submersible & surface pump models</li>
+     <li>Low maintenance & long operational life</li>
+     <li>Ideal for irrigation, agriculture, and livestock watering</li>
+     <li>Eco-friendly & cost-saving solution</li>
+   </ul>
+   <h3>Available Capacities:</h3>
+   <ul>
+     <li>0.5 HP, 1 HP, 2 HP, 3 HP, and higher</li>
+     <li>Suitable for small farms to large agricultural fields</li>
+   </ul>
+   <h3>Includes:</h3>
+   <ul>
+     <li>Solar pump motor</li>
+     <li>Solar panels</li>
+     <li>Controller & mounting accessories</li>
+   </ul>
+   <p><strong>Switch to solar and ensure uninterrupted water supply even in the most remote locations!</strong></p>`
+)">
+  <img src="Product6.jpeg" alt="Solar Water Pump">
+  <div class="product-name">Solar Water Pump</div>
+</div>
+
+
+<div class="product" onclick="showModal(
+  'Product7.jpeg',
+  'Complete Earthing Kit – Copper Rod, Chemical Bag, Pit Cover for Effective Grounding Solutions',
+  `<p><strong>Ensure safe and efficient electrical grounding with our Earthing Kit</strong>, designed to provide reliable earthing solutions for residential, commercial, and industrial applications.</p>
+
+  <p>This comprehensive kit includes a copper rod, chemical bag, and pit cover, ensuring a safe and durable grounding system to protect your electrical systems from faults, lightning strikes, and surges.</p>
+
+  <h3>Earthing Kit Components:</h3>
+  <h4>Copper Rod:</h4>
+  <ul>
+    <li>Material: High-grade copper</li>
+    <li>Length: Available in various lengths (2m, 3m, 4m)</li>
+    <li>Diameter: 16mm, 20mm</li>
+    <li>Features: Corrosion-resistant, high conductivity, long-lasting performance</li>
+  </ul>
+
+  <h4>Chemical Bag:</h4>
+  <ul>
+    <li>Weight: 5kg, 10kg bags</li>
+    <li>Features: Improved conductivity, low-resistance soil treatment, moisture retention</li>
+  </ul>
+
+  <h4>Pit Cover:</h4>
+  <ul>
+    <li>Material: High-strength plastic or metal</li>
+    <li>Size: Standard pit size (custom sizes available)</li>
+    <li>Features: Durable, weather-resistant, easy access, secure fit</li>
+  </ul>
+
+  <h3>Key Benefits:</h3>
+  <ul>
+    <li>Enhanced safety for equipment and personnel</li>
+    <li>Improved grounding efficiency and performance</li>
+    <li>Corrosion-resistant, weatherproof components</li>
+    <li>Applicable for homes, factories, solar setups, telecom towers</li>
+  </ul>
+
+  <h3>Why Choose Us?</h3>
+  <ul>
+    <li>✔ Premium quality components meeting international standards</li>
+    <li>✔ Long-lasting, high-conductivity copper rod and materials</li>
+    <li>✔ Full kit includes rod, compound, and pit cover</li>
+    <li>✔ Competitive pricing and expert support</li>
+  </ul>
+
+  <p><strong>Invest in a high-performance grounding solution today!</strong></p>`
+)">
+  <img src="Product7.jpeg" alt="Complete Earthing Kit">
+  <div class="product-name">Complete Earthing Kit</div>
+</div>
+
+
+
+<div class="product" onclick="showModal(
+  'Product8.jpeg',
+  'Solar Water Heater',
+  `<p><strong>Best Solar Water Heater for Home & Commercial Use — Save Energy & Cut Bills</strong></p>
+   <p>Buy Solar Geyser at Best Price | 100L, 200L, 300L Available</p>
+
+   <p>Looking for an affordable solar water heater to reduce your electricity bills? Our best-in-class solar water heaters provide instant, reliable hot water for homes, apartments, hotels, hostels, and commercial buildings — all powered by the sun!</p>
+
+   <p>With high-efficiency ETC (Evacuated Tube Collectors) and durable FPC (Flat Plate Collectors), our systems heat water quickly and retain warmth longer. Whether you're comparing ETC vs FPC solar water heaters or looking for the right solar geyser price, we have the perfect solution for your needs.</p>
+
+   <h4>Features:</h4>
+   <ul>
+     <li>Save up to 70% on energy bills with 100% solar-powered heating</li>
+     <li>ETC & FPC models available (choose based on your area & usage)</li>
+     <li>Durable storage tank with anti-corrosion technology</li>
+     <li>Low maintenance and long lifespan</li>
+     <li>Eco-friendly and cost-effective solution</li>
+   </ul>
+
+   <h4>Available Capacities:</h4>
+   <ul>
+     <li>100L, 200L, 300L, 500L & custom sizes</li>
+   </ul>
+
+   <h4>Applications:</h4>
+   <ul>
+     <li>Homes, flats, hotels, hostels, hospitals, factories</li>
+   </ul>
+
+   <h4>Why Choose Us?</h4>
+   <ul>
+     <li>✔ Competitive solar geyser prices</li>
+     <li>✔ Expert installation support</li>
+     <li>✔ Trusted by hundreds of customers</li>
+   </ul>
+
+   <p><strong>Switch to the best solar water heater today and enjoy free hot water every day — while saving money and going green!</strong></p>`
+)">
+  <img src="Product8.jpeg" alt="Solar Water Heater">
+  <div class="product-name">Solar Water Heater</div>
+</div>
+
+
+
+<div class="product" onclick="showModal(
+  'Product9.jpeg',
+  'Electrical Panels — PCC, MCC, APFC, PLC, ATS & More',
+  `<p><strong>Best Electrical Panels — PCC, MCC, APFC, PLC, ATS & More for Efficient Power Control</strong></p>
+   <p>Reliable & Safe Power Distribution Panels for Industrial, Commercial & Residential Use</p>
+
+   <p>Looking for high-quality electrical panels for power distribution and motor control? Our range of PCC (Power Control Center), MCC (Motor Control Center), APFC (Automatic Power Factor Correction) panels, and many more provide safe, reliable, and energy-efficient solutions for industrial, commercial, and residential applications.</p>
+
+   <h4>Types of Electrical Panels:</h4>
+   <ul>
+     <li><strong>PCC Panels:</strong> Centralized power control (10kW to 10MW)</li>
+     <li><strong>MCC Panels:</strong> Motor control and protection (5kW to 5MW)</li>
+     <li><strong>APFC Panels:</strong> Automatic power factor correction (20kW to 2MW)</li>
+     <li><strong>DCDB Panels:</strong> DC distribution for solar/battery systems (1kW to 1MW)</li>
+     <li><strong>ACDB Panels:</strong> AC distribution for HVAC/solar (5kW to 5MW)</li>
+     <li><strong>PLC Panels:</strong> Automated process control (varies)</li>
+     <li><strong>ATS Panels:</strong> Automatic transfer between power sources (10kW to 5MW)</li>
+     <li><strong>LT Panels:</strong> Low-voltage residential/commercial distribution (up to 100kW)</li>
+   </ul>
+
+   <h4>Key Features:</h4>
+   <ul>
+     <li>Industrial-grade quality and durability</li>
+     <li>Overload, short-circuit, and fault protection</li>
+     <li>Custom-built to your specific wattage and layout needs</li>
+     <li>Energy-efficient, low maintenance</li>
+     <li>Seamless integration with current infrastructure</li>
+   </ul>
+
+   <h4>Applications:</h4>
+   <ul>
+     <li>Factories, plants, and manufacturing units</li>
+     <li>Shopping malls, offices, and commercial complexes</li>
+     <li>Solar energy setups and hybrid systems</li>
+     <li>Utility and power grid systems</li>
+   </ul>
+
+   <h4>Why Choose Us?</h4>
+   <ul>
+     <li>✔ Certified panels built to international standards</li>
+     <li>✔ Custom configurations and expert support</li>
+     <li>✔ Affordable pricing</li>
+     <li>✔ Trusted by industries for over a decade</li>
+   </ul>
+
+   <p><strong>Get safe, efficient, and scalable electrical panels for your facility today!</strong></p>`
+)">
+  <img src="Product9.jpeg" alt="Electrical Panels">
+  <div class="product-name">Electrical Panels</div>
+</div>
+
+<div class="product" onclick="showModal(
+  'Product10.jpeg',
+  'Solar EV Charger — Fast, Safe & Affordable Charging',
+  `<p><strong>Best EV Charger for Home & Commercial Use — Fast, Safe & Affordable Charging</strong></p>
+
+  <p>Buy EV Charger at Best Price | AC & DC Fast Chargers Available</p>
+
+  <p>Looking for the best EV charger for home or your business? Our high-performance EV chargers offer fast, reliable, and hassle-free charging for all types of electric vehicles. Designed for both personal and commercial use, our chargers come with advanced safety features and are built for long-lasting performance.</p>
+
+  <h4>Features:</h4>
+  <ul>
+    <li>Fast & safe EV charging with built-in safety protections</li>
+    <li>Available in AC (3.3kW, 7.4kW) and DC (30kW, 60kW, 120kW) fast charging options</li>
+    <li>Compatible with all electric vehicles (universal design)</li>
+    <li>Smart charging control via mobile app (optional)</li>
+    <li>Weatherproof & durable for both indoor and outdoor use</li>
+    <li>Low maintenance and energy-efficient operation</li>
+  </ul>
+
+  <h4>Ideal For:</h4>
+  <ul>
+    <li>Home EV charging solutions</li>
+    <li>Commercial EV charging stations</li>
+    <li>Offices, malls, fleet operators, parking areas</li>
+  </ul>
+
+  <h4>Why Choose Us?</h4>
+  <ul>
+    <li>✔ Best EV charger prices in the market</li>
+    <li>✔ Expert installation & service support</li>
+    <li>✔ Trusted by EV users across the country</li>
+  </ul>
+
+  <p><strong>Buy the best EV charger today and enjoy fast, safe, and efficient charging — at home or for your business!</strong></p>`
+)">
+  <img src="Product10.jpeg" alt="Solar EV Charger">
+  <div class="product-name">Solar EV Charger</div>
+</div>
+
+
+<div class="product" onclick="showModal(
+  'Product11.jpeg',
+  'Cable Trays – Ladder & Perforated Types',
+  `<p><strong>Cable Trays – Ladder & Perforated Type in Galvanized Steel, Stainless Steel, and Aluminium</strong></p>
+  <p>With Pre-Galvanized, Hot-Dip Galvanized & Powder Coated Finishes</p>
+  <p>Durable, Corrosion-Resistant & Efficient Cable Management Solutions</p>
+
+  <p>Upgrade your electrical installations with our premium cable trays, available in both ladder type and perforated type designs. Made from galvanized steel, stainless steel, and aluminium, our trays deliver superior strength, corrosion resistance, and long-term performance for industrial, commercial, and infrastructure projects.</p>
+
+  <h4>Types of Cable Trays:</h4>
+  <strong>Ladder Type:</strong>
+  <ul>
+    <li>Heavy-duty support, excellent ventilation</li>
+    <li>Materials: Galvanized steel, stainless steel, aluminium</li>
+    <li>Surface Finishes: Pre-galvanized, hot-dip galvanized, powder coated</li>
+    <li>Applications: Power stations, industrial plants</li>
+  </ul>
+
+  <strong>Perforated Type:</strong>
+  <ul>
+    <li>Light/medium-duty loads, effective heat dissipation</li>
+    <li>Materials: Galvanized steel, stainless steel, aluminium</li>
+    <li>Applications: Offices, IT parks, factories</li>
+  </ul>
+
+  <h4>Available Surface Finishes:</h4>
+  <ul>
+    <li>Pre-Galvanized: Economical, smooth finish</li>
+    <li>Hot-Dip Galvanized: Strong corrosion resistance</li>
+    <li>Powder Coated: Aesthetic, colored finish with added protection</li>
+  </ul>
+
+  <h4>Key Benefits:</h4>
+  <ul>
+    <li>Organized, efficient cable management</li>
+    <li>Corrosion-resistant options for all environments</li>
+    <li>Custom sizes with accessories: bends, tees, elbows, etc.</li>
+    <li>Modular design for easy installation</li>
+    <li>Improved safety and heat ventilation</li>
+  </ul>
+
+  <h4>Ideal Applications:</h4>
+  <ul>
+    <li>Industrial plants, power plants</li>
+    <li>Offices, commercial buildings, IT hubs</li>
+    <li>Solar setups, hospitals, government projects</li>
+  </ul>
+
+  <h4>Why Choose Us?</h4>
+  <ul>
+    <li>✔ High-grade galvanized steel, stainless steel, aluminium</li>
+    <li>✔ Pre-galvanized, hot-dip galvanized, and powder coated options</li>
+    <li>✔ All sizes and custom options available</li>
+    <li>✔ Industry-standard products with fast delivery</li>
+    <li>✔ Trusted by top engineers and builders</li>
+  </ul>
+
+  <p><strong>Simplify and secure your cable management with our corrosion-resistant cable trays—custom-built for your needs!</strong></p>`
+)">
+  <img src="Product11.jpeg" alt="Cable Trays">
+  <div class="product-name">Cable Trays</div>
+</div>
+
+
+<div class="product" onclick="showModal(
+  'Product12.jpeg',
+  'GI Strip – Galvanized Iron Strip',
+  `<p><strong>GI Strip – Galvanized Iron Strip for Earthing & Electrical Applications</strong></p>
+  <p>Durable, Corrosion-Resistant & Available in All Sizes</p>
+
+  <p>Our premium GI Strips (Galvanized Iron Strips) are designed for reliable use in earthing systems, electrical grounding, and industrial applications. Manufactured from high-quality mild steel and coated with zinc through hot-dip galvanization, our strips offer excellent corrosion resistance and long-term durability even in harsh outdoor environments.</p>
+
+  <h4>Key Features:</h4>
+  <ul>
+    <li>Material: High-quality mild steel with hot-dip galvanized zinc coating</li>
+    <li>Corrosion Resistant: Zinc coating protects against rust and extends lifespan</li>
+    <li>Available Sizes: All widths and thicknesses as per customer requirements</li>
+    <li>High Conductivity: Ensures efficient grounding and electrical continuity</li>
+    <li>Flexible Use: Easily cut, bent, and installed on-site</li>
+    <li>Standards Compliant: Meets industry norms for earthing and electrical safety</li>
+  </ul>
+
+  <h4>Applications:</h4>
+  <ul>
+    <li>Earthing & Grounding Systems</li>
+    <li>Electrical Panels & Substations</li>
+    <li>Lightning Protection Systems</li>
+    <li>Industrial Plants & Factories</li>
+    <li>Solar Power Installations</li>
+    <li>Telecommunication Towers & Infrastructure Projects</li>
+  </ul>
+
+  <h4>Why Choose Our GI Strips?</h4>
+  <ul>
+    <li>✔ Hot-dip galvanized for superior rust resistance</li>
+    <li>✔ All sizes available to suit every project</li>
+    <li>✔ High strength and reliable conductivity</li>
+    <li>✔ Cost-effective and durable solution for earthing</li>
+    <li>✔ Supplied to leading electrical contractors and infrastructure projects</li>
+  </ul>`
+)">
+  <img src="Product12.jpeg" alt="Galvanized Iron Strip">
+  <div class="product-name">Galvanized Iron Strip</div>
+</div>
+
+
+
+<div class="product" onclick="showModal(
+  'Product13.jpeg',
+  'Copper Strip – High Conductivity Strips',
+  `<p><strong>Copper Strip – High Conductivity Strips for Earthing & Electrical Applications</strong></p>
+  <p>Pure Copper | Corrosion-Resistant | Available in All Sizes</p>
+
+  <p>Our premium Copper Strips are manufactured from 99.9% pure electrolytic copper, ensuring superior electrical conductivity and excellent corrosion resistance. Designed for use in earthing systems, electrical grounding, busbars, and industrial power distribution, these strips offer reliable performance in both indoor and outdoor environments.</p>
+
+  <h4>Key Features:</h4>
+  <ul>
+    <li>Material: 99.9% pure electrolytic copper</li>
+    <li>High Conductivity: Ensures efficient power transmission and grounding</li>
+    <li>Corrosion Resistant: Long-lasting performance in all environments</li>
+    <li>Available Sizes: All widths and thicknesses customized as per requirement</li>
+    <li>Flexible & Durable: Easy to cut, bend, and install on-site</li>
+    <li>Standards Compliant: Manufactured as per IS and international norms</li>
+  </ul>
+
+  <h4>Applications:</h4>
+  <ul>
+    <li>Earthing & Grounding Systems</li>
+    <li>Electrical Panels & Busbars</li>
+    <li>Lightning Protection Systems</li>
+    <li>Industrial Power Plants & Factories</li>
+    <li>Solar & Renewable Energy Projects</li>
+    <li>Telecom Towers & Infrastructure Projects</li>
+  </ul>
+
+  <h4>Why Choose Our Copper Strips?</h4>
+  <ul>
+    <li>✔ Pure copper for maximum conductivity</li>
+    <li>✔ All sizes available for any project requirement</li>
+    <li>✔ Superior corrosion resistance and long service life</li>
+    <li>✔ Widely used by top electrical contractors and industries</li>
+    <li>✔ Competitive pricing and timely delivery</li>
+  </ul>`
+)">
+  <img src="Product13.jpeg" alt="Copper Strip">
+  <div class="product-name">Copper Strip</div>
+</div>
+
+<div class="product" onclick="showModal(
+  'Product14.jpeg',
+  'Industrial UPS – High-Capacity Backup',
+  `<p><strong>High-Capacity Industrial UPS – Reliable Power Protection for Your Business</strong></p>
+  <p>Ensure uninterrupted operations with our high-capacity Uninterruptible Power Supply (UPS), engineered to deliver superior power protection for large-scale environments. Perfect for data centers, manufacturing plants, hospitals, and corporate offices, this robust UPS system safeguards your critical equipment from power outages, voltage fluctuations, and surges.</p>
+
+  <p>Featuring advanced battery management, high energy efficiency, and scalable capacity, our UPS units provide extended runtime and optimal performance under heavy loads. The intuitive LCD display and smart monitoring capabilities make it easy to manage power status in real-time, while built-in safety features guarantee reliable operation around the clock.</p>
+
+  <h4>Key Features:</h4>
+  <ul>
+    <li>High power output for large-scale applications</li>
+    <li>Advanced battery technology for extended backup time</li>
+    <li>Real-time monitoring with user-friendly LCD interface</li>
+    <li>Surge protection and automatic voltage regulation (AVR)</li>
+    <li>Energy-efficient design to reduce operating costs</li>
+    <li>Scalable architecture to grow with your business needs</li>
+  </ul>
+
+  <p>Invest in peace of mind with our powerful UPS solutions — keeping your operations running smoothly, even when the grid fails.</p>`
+)">
+  <img src="Product14.jpeg" alt="Industrial UPS">
+  <div class="product-name">Industrial UPS</div>
+</div>
+<div class="product" onclick="showModal(
+  'Product15.jpeg',
+  'High-Performance Backup Battery',
+  `<p>A battery is an energy storage device designed to supply power when needed, ensuring continuous operation of connected equipment during interruptions or fluctuations in the main power source.</p>
+  
+  <p>Commonly made using lead-acid, lithium-ion, or nickel-cadmium technologies, these batteries provide a dependable backup solution for a wide range of applications—from industrial machinery to home electronics.</p>
+
+  <p>They function by storing energy in chemical form and converting it into electrical energy when required. These batteries are known for delivering stable, consistent power with features such as:</p>
+
+  <ul>
+    <li>High efficiency</li>
+    <li>Deep discharge capability</li>
+    <li>Long service life</li>
+    <li>Minimal maintenance needs</li>
+  </ul>
+
+  <p>Many modern models also include advanced monitoring systems that track performance, temperature, and remaining charge in real time.</p>
+
+  <p>Choosing the appropriate battery depends on factors like power load, backup duration, recharge speed, and environmental conditions. Proper care and timely replacement help maintain peak performance and system reliability.</p>`
+)">
+  <img src="Product15.jpeg" alt="Product 15">
+  <div class="product-name">High-Performance Battery</div>
+</div>
+
+
+
+  <!-- Copy and paste the same format above for more products -->
+
+</div>
+
+<!-- 🔲 Product Modal -->
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Product">
+    <button id="viewFullButton" onclick="viewFullPhoto()" class="view-full-btn">View Full Photo</button>
+    <h2 id="modalTitle"></h2>
+    <div id="modalDescription"></div>
+  </div>
+</div>
+
+<!-- 🧠 Scripts -->
+<script>
+  function showModal(image, name, description) {
+    document.getElementById("modalImage").src = image;
+    document.getElementById("modalTitle").textContent = name;
+    document.getElementById("modalDescription").innerHTML = description;
+    document.getElementById("productModal").style.display = "flex";
+  }
+
+  function closeModal() {
+    document.getElementById("productModal").style.display = "none";
+  }
+
+  function viewFullPhoto() {
+    const imageSrc = document.getElementById("modalImage").src;
+    window.open(imageSrc, '_blank');
+  }
+
+  window.onclick = function(event) {
+    const modal = document.getElementById("productModal");
+    if (event.target === modal) {
+      closeModal();
+    }
+  }
+</script>
+
+<div class="quote-section">
+  <p>
+ Click the button to get redirected to GET QUOTE to
+    <strong>Place Order, Ask Query, or Negotiate</strong>
+  </p>
+  <button class="redirect-button" onclick="window.location.href='https://forms.gle/UeQspQ6SM4dRk7W99'">
+    Get Quote Form
+  </button>
+</div>
+
+
+</body>
+</html>

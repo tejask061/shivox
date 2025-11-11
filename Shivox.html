@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shivox</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo img {
+      height: 50px;
+    }
+
+    nav a {
+      margin-left: 20px;
+      font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: 0.3s;
+    }
+
+    nav a.active {
+      color: #004080;
+      font-weight: bold;
+      border-bottom: 2px solid #004080;
+      background-color: #f0f8ff;
+    }
+
+    #homeLink {
+      font-weight: 800;
+      color: #002244;
+      text-transform: uppercase;
+    }
+
+   .call-link {
+  background-color: #004080 !important; /* lighter navy */
+  color: #ffffff !important;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.call-link:hover {
+  background-color: #003366 !important; /* darker on hover */
+}
+
+
+    .hero {
+      background-image: url('Background.jpeg');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 40px;
+      color: #fff;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons a {
+      margin-right: 15px;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      text-align: center;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .solar-btn {
+      background-color: #facc15;
+      color: #000;
+    }
+
+    .solar-btn:hover {
+      background-color: #f4a261;
+    }
+
+    .services-btn {
+      background-color: #fff;
+      color: #004080;
+    }
+
+    .services-btn:hover {
+      background-color: #004080;
+      color: #fff;
+    }
+
+    .features {
+      display: flex;
+      margin-top: 40px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .feature-box {
+      background: rgba(0,0,0,0.5);
+      padding: 20px;
+      border-radius: 8px;
+      width: 250px;
+      color: #fff;
+    }
+
+    #about {
+      padding: 60px 40px;
+      background-color: #ffffff;
+    }
+
+    #about h2, #contact h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #003366;
+    }
+
+    #contact {
+      background-color: #f4f8fc;
+      padding: 60px 40px;
+    }
+
+    #contact p {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #555;
+    }
+
+    .contact-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-form,
+    .contact-info {
+      flex: 1;
+      min-width: 300px;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    .contact-form button {
+      background-color: #004080;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .contact-info h3 {
+      margin-bottom: 20px;
+      color: #004080;
+    }
+
+    .contact-info .info-block {
+      margin-bottom: 20px;
+    }
+
+    .contact-info .info-block strong {
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 5px;
+      color: #222;
+    }
+
+    .contact-info .info-block span {
+      display: block;
+      font-size: 1rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="Shivox logo.jpeg" alt="Shivox Logo">
+    </div>
+    <nav>
+      <a href="#home" id="homeLink">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+919136702519" class="call-link">📞 Call Us</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1>Power Your Home with<br>Clean, Renewable Energy</h1>
+      <p>Expert solar installation and electrical services for residential and commercial properties. Save money and reduce your carbon footprint.</p>
+      <div class="hero-buttons">
+        <a href="ProductsGallery.html" class="solar-btn">Products</a>
+        <a href="ServiceGallery.html" class="services-btn">Services</a>
+      </div>
+      <div class="features">
+        <div class="feature-box"><strong>Save Money</strong><br>Reduce your monthly electricity bills</div>
+        <div class="feature-box"><strong>Go Green</strong><br>Reduce your carbon footprint significantly</div>
+        <div class="feature-box"><strong>Expert Service</strong><br>Licensed professionals with years of experience</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <div style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 40px;">
+      <div style="flex: 1; min-width: 300px;">
+        <p>At <strong>Shivox</strong>, we are dedicated to delivering advanced solar and electrical solutions that contribute to a more sustainable future. As a trusted provider, we offer a comprehensive portfolio of high-quality products, including solar panels, solar inverters, batteries, earthing kits, APFC panels, MCC panels, electrical panels, and more.</p>
+        <p>Our expertise covers a wide range of systems, including on-grid, off-grid, and hybrid solar solutions, tailored to meet the specific needs of residential, commercial, and industrial clients. Each solution is designed to maximize efficiency, reliability, and long-term value, making clean energy both accessible and cost-effective.</p>
+        <p>Beyond products, Shivox provides end-to-end services, including installation, maintenance, commissioning, and ongoing support, ensuring that every system operates at peak performance. Our commitment to quality, customer satisfaction, and sustainable practices has positioned us as a trusted name in the energy sector.</p>
+
+        <h3 style="margin-top: 20px;">Our Mission</h3>
+        <p>To empower individuals and businesses with sustainable, efficient, and reliable energy solutions that foster a greener and more responsible future.</p>
+
+        <h3 style="margin-top: 20px;">Why Choose Shivox?</h3>
+        <ul style="line-height: 1.8;">
+          <li>✔ Extensive range of premium solar and electrical products</li>
+          <li>✔ Professional installation and comprehensive after-sales service</li>
+          <li>✔ Tailored solutions for diverse energy needs</li>
+          <li>✔ Unwavering commitment to quality, safety, and customer success</li>
+        </ul>
+
+        <h3 style="margin-top: 20px;">Leadership</h3>
+        <p>Shivox is led by <strong>Mr. Tejas Kadam</strong>, born on May 5, 2004, and based in Mumbai, India. A qualified electrical engineer by profession, Mr. Kadam brings technical expertise, strategic vision, and entrepreneurial drive to the company. His interest in diverse business ventures and passion for innovation continue to guide Shivox’s growth and expansion across the energy sector. Under his leadership, Shivox remains committed to delivering excellence and pioneering sustainable energy solutions.</p>
+
+        <p style="margin-top: 20px;"><strong>Partner with Shivox</strong> and take a decisive step towards smarter, greener, and more efficient energy solutions.<br><em>Shivox — Powering Progress. Empowering You.</em></p>
+      </div>
+      <div style="flex: 1; min-width: 300px;">
+        <img src="Developer at work.jpeg" alt="Developer at work" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+      </div>
+    </div>
+  </section>
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Ready to start your solar journey? Have questions about our electrical services? Get in touch with our team today.</p>
+    <div class="contact-wrapper">
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
+        <input type="tel" placeholder="Phone Number">
+        <select>
+          <option>Select a service</option>
+          <option>Solar Installation</option>
+          <option>Electrical Services</option>
+          <option>Maintenance</option>
+        </select>
+        <textarea rows="5" placeholder="Tell us about your project or questions..."></textarea>
+        <button>Send Message</button>
+      </div>
+      <div class="contact-info">
+        <h3>Get In Touch</h3>
+        <div class="info-block">
+          <strong>📞 Phone:</strong>
+          <span>+91 9136702519</span>
+        </div>
+        <div class="info-block">
+          <strong>📧 Email:</strong>
+          <span>shivox.solar@gmail.com</span>
+        </div>
+        <div class="info-block">
+          <strong>🏢 Office:</strong>
+          <span>Goregaon East, Mumbai, Maharashtra, India 400063</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.navbar nav a');
+
+    function setActiveLink() {
+      let scrollY = window.scrollY;
+      let currentSectionId = null;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 140;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+          currentSectionId = section.getAttribute('id');
+        }
+      });
+
+      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+        currentSectionId = sections[sections.length - 1].getAttribute('id');
+      }
+
+      navLinks.forEach((link) => {
+        const href = link.getAttribute('href').substring(1);
+        if (href === currentSectionId) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', setActiveLink);
+    setActiveLink();
+  });
+</script>
+
+</body>
+</html>
